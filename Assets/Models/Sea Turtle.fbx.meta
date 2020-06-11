@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 692cc9e06e5da17409c3793c92fac8e0
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: FrontFin1.L
+  - first:
+      1: 100002
+    second: FrontFin1.R
+  - first:
+      1: 100004
+    second: FrontFin2.L
+  - first:
+      1: 100006
+    second: FrontFin2.R
+  - first:
+      1: 100008
+    second: FrontFin3.L
+  - first:
+      1: 100010
+    second: FrontFin3.R
+  - first:
+      1: 100012
+    second: FrontFin4.L
+  - first:
+      1: 100014
+    second: FrontFin4.L_end
+  - first:
+      1: 100016
+    second: FrontFin4.R
+  - first:
+      1: 100018
+    second: FrontFin4.R_end
+  - first:
+      1: 100020
+    second: Head1
+  - first:
+      1: 100022
+    second: Head2
+  - first:
+      1: 100024
+    second: Head3
+  - first:
+      1: 100026
+    second: Head3_end
+  - first:
+      1: 100028
+    second: Jaw1
+  - first:
+      1: 100030
+    second: Jaw2
+  - first:
+      1: 100032
+    second: Jaw2_end
+  - first:
+      1: 100034
+    second: Neck
+  - first:
+      1: 100036
+    second: RearFin1.L
+  - first:
+      1: 100038
+    second: RearFin1.R
+  - first:
+      1: 100040
+    second: RearFin2.L
+  - first:
+      1: 100042
+    second: RearFin2.R
+  - first:
+      1: 100044
+    second: RearFin3.L
+  - first:
+      1: 100046
+    second: RearFin3.L_end
+  - first:
+      1: 100048
+    second: RearFin3.R
+  - first:
+      1: 100050
+    second: RearFin3.R_end
+  - first:
+      1: 100052
+    second: //RootNode
+  - first:
+      1: 100054
+    second: Sea Turtle
+  - first:
+      1: 100056
+    second: Sea Turtle Skeleton
+  - first:
+      1: 100058
+    second: Spine1
+  - first:
+      1: 100060
+    second: Spine2
+  - first:
+      1: 100062
+    second: Spine3
+  - first:
+      4: 400000
+    second: FrontFin1.L
+  - first:
+      4: 400002
+    second: FrontFin1.R
+  - first:
+      4: 400004
+    second: FrontFin2.L
+  - first:
+      4: 400006
+    second: FrontFin2.R
+  - first:
+      4: 400008
+    second: FrontFin3.L
+  - first:
+      4: 400010
+    second: FrontFin3.R
+  - first:
+      4: 400012
+    second: FrontFin4.L
+  - first:
+      4: 400014
+    second: FrontFin4.L_end
+  - first:
+      4: 400016
+    second: FrontFin4.R
+  - first:
+      4: 400018
+    second: FrontFin4.R_end
+  - first:
+      4: 400020
+    second: Head1
+  - first:
+      4: 400022
+    second: Head2
+  - first:
+      4: 400024
+    second: Head3
+  - first:
+      4: 400026
+    second: Head3_end
+  - first:
+      4: 400028
+    second: Jaw1
+  - first:
+      4: 400030
+    second: Jaw2
+  - first:
+      4: 400032
+    second: Jaw2_end
+  - first:
+      4: 400034
+    second: Neck
+  - first:
+      4: 400036
+    second: RearFin1.L
+  - first:
+      4: 400038
+    second: RearFin1.R
+  - first:
+      4: 400040
+    second: RearFin2.L
+  - first:
+      4: 400042
+    second: RearFin2.R
+  - first:
+      4: 400044
+    second: RearFin3.L
+  - first:
+      4: 400046
+    second: RearFin3.L_end
+  - first:
+      4: 400048
+    second: RearFin3.R
+  - first:
+      4: 400050
+    second: RearFin3.R_end
+  - first:
+      4: 400052
+    second: //RootNode
+  - first:
+      4: 400054
+    second: Sea Turtle
+  - first:
+      4: 400056
+    second: Sea Turtle Skeleton
+  - first:
+      4: 400058
+    second: Spine1
+  - first:
+      4: 400060
+    second: Spine2
+  - first:
+      4: 400062
+    second: Spine3
+  - first:
+      21: 2100000
+    second: Sea Turtle Shell 1
+  - first:
+      21: 2100002
+    second: Sea Turtle Skin 1
+  - first:
+      21: 2100004
+    second: Sea Turtle Beak
+  - first:
+      21: 2100006
+    second: Sea Turtle Shell 2
+  - first:
+      21: 2100008
+    second: Sea Turtle Shell 3
+  - first:
+      21: 2100010
+    second: Sea Turtle Eyes
+  - first:
+      21: 2100012
+    second: Sea Turtle Mouth
+  - first:
+      43: 4300000
+    second: Sea Turtle
+  - first:
+      74: 7400000
+    second: Swim
+  - first:
+      74: 7400002
+    second: Eat
+  - first:
+      74: 7400004
+    second: Eat Loop
+  - first:
+      74: 7400006
+    second: Spin
+  - first:
+      74: 7400008
+    second: Death
+  - first:
+      74: 7400010
+    second: Death Loop
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Sea Turtle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Beak
+    second: {fileID: 2100000, guid: a040eb0d994d1004fb11cf40c4a61ee2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Eyes
+    second: {fileID: 2100000, guid: 985e0cf60930ec7468dc5ab45e832fe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Mouth
+    second: {fileID: 2100000, guid: 9bf6c9221b5e1ee498daabfb948a80aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Shell 1
+    second: {fileID: 2100000, guid: e41d449686b5e1b4283db8c31d5755a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Shell 2
+    second: {fileID: 2100000, guid: b8d9724e2abf33d468507830be838e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Shell 3
+    second: {fileID: 2100000, guid: 5e876e03a3bebb04abe538932b15eb7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea Turtle Skin 1
+    second: {fileID: 2100000, guid: 00daa6c68c6c5214d8fad7346990555f, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Swim
+      takeName: Swim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eat
+      takeName: Eat
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eat Loop
+      takeName: Eat Loop
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Spin
+      takeName: Spin
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: Death
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death Loop
+      takeName: Death Loop
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
