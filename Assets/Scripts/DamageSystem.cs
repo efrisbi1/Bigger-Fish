@@ -26,7 +26,7 @@ public class DamageSystem
 
     public void setHp(double newhp)
     {
-        hp = newhp;
+        maxHp= newhp;
     }
 
     public void setDam(double newdam)

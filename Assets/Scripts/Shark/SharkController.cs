@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class SharkController : MonoBehaviour
 {
-    GameObject mouth;
+    GameObject mouth, shark;
+    private Vector3 scaleChange;
+    float maxScale;
+    double growHp;
+    double growDam;
 
     [Space(5)]
     [Header("Shark Stats")]
@@ -13,8 +17,6 @@ public class SharkController : MonoBehaviour
     [SerializeField] private double sharkHp;
     [SerializeField] private double sharkMaxHp;
     [SerializeField] private double sharkDamage;
-    [SerializeField] private double sharkStamina;
-    [SerializeField] private double sharkMaxStamina;
 
     [Space(5)]
     [Header("Movement")]
@@ -70,12 +72,17 @@ public class SharkController : MonoBehaviour
 
     void Start ()
     {
-        mouth= GameObject.Find("MouthBox");
+        shark = GameObject.Find("WhiteShark");
+        scaleChange = new Vector3(0.00001f, 0.00001f, 0.00001f);
+        maxScale = 5.0f;
+        growHp = 85.0;
+        growDam = 12.0;
+        mouth = GameObject.Find("MouthBox");
         mouth.SetActive(false);
-        sharkStat = new DamageSystem(100.0, 20.0);
-        sharkMaxHp = sharkStat.getHp();
+        sharkMaxHp = 10;
         sharkHp = sharkMaxHp;
-        sharkDamage = sharkStat.getDam();
+        sharkDamage = .5;
+        sharkStat = new DamageSystem(sharkMaxHp, sharkDamage);
         sharkAnim = GetComponent<Animator>();
         sharkRb = GetComponent<Rigidbody>();
 
@@ -89,6 +96,29 @@ public class SharkController : MonoBehaviour
     {
         AnimatorStateMachine();
         Attacking();
+        Growth();
+        sharkStat.setHp(sharkMaxHp);
+        sharkStat.setDam(sharkDamage);
+        sharkHp = sharkStat.getHp();
+
+        //test shark damage
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            sharkStat.damage(1.0);
+        }
+    }
+    private void Growth()
+    {
+        if (shark.transform.localScale.x < maxScale)
+            shark.transform.localScale += scaleChange;
+        if (sharkMaxHp < growHp)
+        {
+            sharkMaxHp += .00001;
+            sharkStat.heal(.00001);
+        }
+            
+        if (sharkDamage < growDam)
+            sharkDamage += .00001;
     }
     private void AnimatorStateMachine()
     {
