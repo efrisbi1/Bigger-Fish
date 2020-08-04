@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class SharkController : MonoBehaviour
 {
-    GameObject mouth, shark;
+    GameObject mouth, shark,cross,healthUI,hungerUI;
+    private RawImage rawHp, rawHung;
     private Vector3 scaleChange;
     float maxScale;
     double growHp;
@@ -39,6 +41,8 @@ public class SharkController : MonoBehaviour
     [Header("Movement with mouse")]
     [SerializeField] private bool mouseRotationControlled = true;
     [Range(1, 10)] [SerializeField] private float rotateShiftMultMouse = 4f;
+
+    [SerializeField]public Texture hp0, hp1, hp2, hp3, hun0, hun1, hun2, hun3;
 
     int attackAnimation = 2;
     
@@ -85,6 +89,13 @@ public class SharkController : MonoBehaviour
         sharkStat = new DamageSystem(sharkMaxHp, sharkDamage);
         sharkAnim = GetComponent<Animator>();
         sharkRb = GetComponent<Rigidbody>();
+        cross = GameObject.Find("Cross");
+        healthUI= GameObject.Find("Health");
+        hungerUI= GameObject.Find("Hunger");
+        rawHp= (RawImage)healthUI.GetComponent<RawImage>();
+        rawHp.texture = hp3;
+        rawHung = (RawImage)hungerUI.GetComponent<RawImage>();
+        rawHung.texture = hun1;
 
         sharkRb.useGravity = false;
         sharkRb.drag = 1f;
@@ -100,11 +111,16 @@ public class SharkController : MonoBehaviour
         sharkStat.setHp(sharkMaxHp);
         sharkStat.setDam(sharkDamage);
         sharkHp = sharkStat.getHp();
+        UpdateUI();
 
-        //test shark damage
+        //test shark damage and heal
         if (Input.GetKeyUp(KeyCode.F))
         {
             sharkStat.damage(1.0);
+        }
+        if (Input.GetKeyUp(KeyCode.H))
+        {
+            sharkStat.heal(1.0);
         }
     }
     private void Growth()
@@ -119,6 +135,19 @@ public class SharkController : MonoBehaviour
             
         if (sharkDamage < growDam)
             sharkDamage += .00001;
+    }
+    private void UpdateUI()
+    {
+        if(sharkHp>sharkMaxHp*.9)
+            rawHp.texture = hp3;
+        else if(sharkHp<(sharkMaxHp*.66)&&sharkHp>(sharkMaxHp*.33))
+            rawHp.texture = hp2;
+        else if (sharkHp < (sharkMaxHp * .33) && sharkHp > (sharkMaxHp * .1))
+            rawHp.texture = hp1;
+        else if (sharkHp < (sharkMaxHp*.1))
+            rawHp.texture = hp0;
+
+        //Hunger soon
     }
     private void AnimatorStateMachine()
     {

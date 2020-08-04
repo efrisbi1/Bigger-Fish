@@ -14,6 +14,7 @@ public class NPCcontrol : MonoBehaviour
     public DamageSystem npcHp;
     [SerializeField] double npcHealth;
     [SerializeField] double npcDamage;
+    [SerializeField] GameObject hitmark;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class NPCcontrol : MonoBehaviour
         anim = GetComponent<Animator>();
         npcNav= GetComponent<NavMeshAgent>();
         npcNav.SetDestination(GetRandomLocation());
+        hitmark.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,8 +55,16 @@ public class NPCcontrol : MonoBehaviour
         if (sMouth.gameObject.tag == "SharkMouth")
         {
             npcHp.damage(shark.sharkStat.getDam());
+            StartCoroutine(hitmarker());
             Debug.Log("NPC HP: " + npcHp.getHp());
         }
+    }
+
+    IEnumerator hitmarker()
+    {
+        hitmark.SetActive(true);
+        yield return new WaitForSeconds(.25f);
+        hitmark.SetActive(false);
     }
 
     private Vector3 GetRandomLocation()
