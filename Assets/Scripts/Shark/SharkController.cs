@@ -48,6 +48,7 @@ public class SharkController : MonoBehaviour
     
     private Animator sharkAnim;
     private Rigidbody sharkRb;
+    AudioSource aud;
 
     #region AnimatorParameters
     private float animatorVelocity = 1;
@@ -76,6 +77,7 @@ public class SharkController : MonoBehaviour
 
     void Start ()
     {
+        aud = GetComponent<AudioSource>();
         shark = GameObject.Find("WhiteShark");
         scaleChange = new Vector3(0.00001f, 0.00001f, 0.00001f);
         maxScale = 5.0f;
@@ -212,6 +214,14 @@ public class SharkController : MonoBehaviour
     bool reset = false;
     private IEnumerator shake;
 
+    public void Feed()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            sharkAnim.SetBool("isFeed", true);
+            aud.Play();
+        }
+    }
     private void Attacking()
     {
         shake = ShakeTimer(.1f);

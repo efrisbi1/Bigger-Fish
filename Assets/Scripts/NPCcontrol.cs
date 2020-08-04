@@ -15,49 +15,78 @@ public class NPCcontrol : MonoBehaviour
     [SerializeField] double npcHealth;
     [SerializeField] double npcDamage;
     [SerializeField] GameObject hitmark;
+    GameObject feedText;
 
     // Start is called before the first frame update
     void Start()
     {
-        npcHp = new DamageSystem(100.0, 20.0);
-        npcHealth = npcHp.getHp();
-        npcDamage = npcHp.getDam();
+        npcHp = new DamageSystem(npcHealth, npcDamage);
         anim = GetComponent<Animator>();
         npcNav= GetComponent<NavMeshAgent>();
         npcNav.SetDestination(GetRandomLocation());
+        this.GetComponent<SphereCollider>().enabled = false;
+        feedText =GameObject.Find("FeedText");
+
         hitmark.SetActive(false);
+        feedText.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!npcNav.pathPending)
+        if (npcHp.getHp() != 0)
         {
-            if (npcNav.remainingDistance <= npcNav.stoppingDistance)
+            if (!npcNav.pathPending)
             {
-                if (!npcNav.hasPath || npcNav.velocity.sqrMagnitude == 0f)
+                if (npcNav.remainingDistance <= npcNav.stoppingDistance)
                 {
-                    npcNav.SetDestination(GetRandomLocation());
+                    if (!npcNav.hasPath || npcNav.velocity.sqrMagnitude == 0f)
+                    {
+                        npcNav.SetDestination(GetRandomLocation());
+                    }
                 }
             }
         }
         if (npcHp.getHp()==0.0)
         {
             Destroy(GetComponent<CapsuleCollider>());
-            Destroy(this);
+            //Destroy(this);
             Destroy(npcNav);
+            this.GetComponent<SphereCollider>().enabled = true;
             anim.SetBool("isSwim", false);
             anim.SetBool("isDead", true);
         }
     }
     private void OnTriggerEnter(Collider sMouth)
     {
-        if (sMouth.gameObject.tag == "SharkMouth")
+        if (npcHp.getHp()!=0.0 && sMouth.gameObject.tag == "SharkMouth")
         {
             npcHp.damage(shark.sharkStat.getDam());
             StartCoroutine(hitmarker());
             Debug.Log("NPC HP: " + npcHp.getHp());
         }
+    }
+
+    private void OnTriggerStay(Collider sharkCol)
+    {
+        if (npcHp.getHp() == 0.0 && sharkCol.gameObject.tag== "Shark")
+        {
+            feedText.SetActive(true);
+            shark.Feed();
+        }
+    }
+    private void OnTriggerExit(Collider sharkCol)
+    {
+        if (npcHp.getHp() == 0.0 && sharkCol.gameObject.tag == "Shark")
+        {
+            feedText.SetActive(false);
+        }
+    }
+
+    IEnumerator feed()
+    {
+        feedText.SetActive(false);
+        yield return new WaitForSeconds(.25f);
     }
 
     IEnumerator hitmarker()
