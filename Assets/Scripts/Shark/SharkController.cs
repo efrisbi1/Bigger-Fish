@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SharkController : MonoBehaviour
 {
-    GameObject mouth, shark,cross,healthUI,hungerUI;
+    GameObject mouth, shark,cross,healthUI,hungerUI,hitmark, feedText;
     private RawImage rawHp, rawHung;
     private Vector3 scaleChange;
     float maxScale;
@@ -94,7 +94,9 @@ public class SharkController : MonoBehaviour
         cross = GameObject.Find("Cross");
         healthUI= GameObject.Find("Health");
         hungerUI= GameObject.Find("Hunger");
-        rawHp= (RawImage)healthUI.GetComponent<RawImage>();
+        hitmark = GameObject.Find("Hit");
+        feedText = GameObject.Find("FeedText");
+        rawHp = (RawImage)healthUI.GetComponent<RawImage>();
         rawHp.texture = hp3;
         rawHung = (RawImage)hungerUI.GetComponent<RawImage>();
         rawHung.texture = hun1;
@@ -214,13 +216,48 @@ public class SharkController : MonoBehaviour
     bool reset = false;
     private IEnumerator shake;
 
+    float startTime = 0f;
+    float holdTime = 3.0f;
+    float timer = 0f;
+
+    bool held = false;
     public void Feed()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            sharkAnim.SetBool("isFeed", true);
-            aud.Play();
+            startTime = Time.time;
+            timer = startTime;
         }
+
+        if (Input.GetKey(KeyCode.E) && held==false){
+            sharkAnim.SetBool("isFeed", true);
+            feedText.SetActive(false);
+            timer += Time.deltaTime;
+
+            if (timer > (startTime+holdTime))
+            {
+                held = true;
+                FeedDone();
+            }
+        }
+        else
+            sharkAnim.SetBool("isFeed", false);
+
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            held = false;
+            sharkAnim.SetBool("isFeed", false);
+        }
+    }
+    void FeedDone()
+    {
+        sharkAnim.SetBool("isFeed", false);
+        Debug.Log("Fed");
+        aud.Play();
+        startTime = 0f;
+        timer = 0f;
+        held = false;
     }
     private void Attacking()
     {

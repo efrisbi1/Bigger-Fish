@@ -14,8 +14,7 @@ public class NPCcontrol : MonoBehaviour
     public DamageSystem npcHp;
     [SerializeField] double npcHealth;
     [SerializeField] double npcDamage;
-    [SerializeField] GameObject hitmark;
-    GameObject feedText;
+    [SerializeField] GameObject hitmark, feedText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,6 @@ public class NPCcontrol : MonoBehaviour
         npcNav= GetComponent<NavMeshAgent>();
         npcNav.SetDestination(GetRandomLocation());
         this.GetComponent<SphereCollider>().enabled = false;
-        feedText =GameObject.Find("FeedText");
 
         hitmark.SetActive(false);
         feedText.SetActive(false);
@@ -81,12 +79,6 @@ public class NPCcontrol : MonoBehaviour
         {
             feedText.SetActive(false);
         }
-    }
-
-    IEnumerator feed()
-    {
-        feedText.SetActive(false);
-        yield return new WaitForSeconds(.25f);
     }
 
     IEnumerator hitmarker()
