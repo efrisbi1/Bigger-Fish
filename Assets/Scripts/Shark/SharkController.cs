@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,9 @@ using UnityEngine.UI;
 
 public class SharkController : MonoBehaviour
 {
-    GameObject mouth, shark,cross,healthUI,hungerUI,hitmark, feedText;
+    public NPCcontrol npc;
+    public BigNPC bnpc;
+    GameObject mouth, shark,cross,healthUI,hungerUI;
     private RawImage rawHp, rawHung;
     private Vector3 scaleChange;
     float maxScale;
@@ -19,6 +22,8 @@ public class SharkController : MonoBehaviour
     [SerializeField] private double sharkHp;
     [SerializeField] private double sharkMaxHp;
     [SerializeField] private double sharkDamage;
+    [SerializeField] private double energy;
+    [SerializeField] private int factor;
 
     [Space(5)]
     [Header("Movement")]
@@ -43,6 +48,7 @@ public class SharkController : MonoBehaviour
     [Range(1, 10)] [SerializeField] private float rotateShiftMultMouse = 4f;
 
     [SerializeField]public Texture hp0, hp1, hp2, hp3, hun0, hun1, hun2, hun3;
+    [SerializeField] public GameObject hitmark, feedText;
 
     int attackAnimation = 2;
     
@@ -79,10 +85,10 @@ public class SharkController : MonoBehaviour
     {
         aud = GetComponent<AudioSource>();
         shark = GameObject.Find("WhiteShark");
-        scaleChange = new Vector3(0.00001f, 0.00001f, 0.00001f);
-        maxScale = 5.0f;
-        growHp = 85.0;
-        growDam = 12.0;
+        maxScale = 3.0f;
+        growHp = 80.0;
+        growDam = 36.0;
+        energy = 2.0;
         mouth = GameObject.Find("MouthBox");
         mouth.SetActive(false);
         sharkMaxHp = 10;
@@ -94,12 +100,9 @@ public class SharkController : MonoBehaviour
         cross = GameObject.Find("Cross");
         healthUI= GameObject.Find("Health");
         hungerUI= GameObject.Find("Hunger");
-        hitmark = GameObject.Find("Hit");
-        feedText = GameObject.Find("FeedText");
         rawHp = (RawImage)healthUI.GetComponent<RawImage>();
         rawHp.texture = hp3;
         rawHung = (RawImage)hungerUI.GetComponent<RawImage>();
-        rawHung.texture = hun1;
 
         sharkRb.useGravity = false;
         sharkRb.drag = 1f;
@@ -112,6 +115,7 @@ public class SharkController : MonoBehaviour
         AnimatorStateMachine();
         Attacking();
         Growth();
+        Hunger();
         sharkStat.setHp(sharkMaxHp);
         sharkStat.setDam(sharkDamage);
         sharkHp = sharkStat.getHp();
@@ -127,18 +131,81 @@ public class SharkController : MonoBehaviour
             sharkStat.heal(1.0);
         }
     }
+    private void Hunger()
+    {
+        if (energy > 3.0)
+        {
+            energy = 3.0;
+        }
+        if (energy < 0.0)
+        {
+            energy = 0.0;
+        }
+        if (energy == 0.0)
+        {
+            sharkStat.damage(0.0010);
+            factor = 0;
+        }
+        if (energy > 2.5)
+        {
+            factor = 3;
+            energy -= .0005;
+        }
+        if (energy>1.5 && energy<2.5)
+        {
+            factor = 2;
+            energy -= .00020;
+        }
+        if (energy > 0.0 && energy < 1.5)
+        {
+            factor = 1;
+            energy -= .00010;
+        }
+    }
     private void Growth()
     {
-        if (shark.transform.localScale.x < maxScale)
-            shark.transform.localScale += scaleChange;
-        if (sharkMaxHp < growHp)
+        if (factor == 1)
         {
-            sharkMaxHp += .00001;
-            sharkStat.heal(.00001);
+            scaleChange = new Vector3(0.00002f, 0.00002f, 0.00002f);
+            if (shark.transform.localScale.x < maxScale)
+                shark.transform.localScale += scaleChange;
+            if (sharkMaxHp < growHp)
+            {
+                sharkMaxHp += .00005;
+                sharkStat.heal(.00005);
+            }
+
+            if (sharkDamage < growDam)
+                sharkDamage += .00005;
         }
-            
-        if (sharkDamage < growDam)
-            sharkDamage += .00001;
+        if (factor == 2)
+        {
+            scaleChange = new Vector3(0.0001f, 0.0001f, 0.0001f);
+            if (shark.transform.localScale.x < maxScale)
+                shark.transform.localScale += scaleChange;
+            if (sharkMaxHp < growHp)
+            {
+                sharkMaxHp += .0005;
+                sharkStat.heal(.0005);
+            }
+
+            if (sharkDamage < growDam)
+                sharkDamage += .00005;
+        }
+        if (factor == 3)
+        {
+            scaleChange = new Vector3(0.0002f, 0.0002f, 0.0002f);
+            if (shark.transform.localScale.x < maxScale)
+                shark.transform.localScale += scaleChange;
+            if (sharkMaxHp < growHp)
+            {
+                sharkMaxHp += .005;
+                sharkStat.heal(.005);
+            }
+
+            if (sharkDamage < growDam)
+                sharkDamage += .0025;
+        }
     }
     private void UpdateUI()
     {
@@ -151,7 +218,14 @@ public class SharkController : MonoBehaviour
         else if (sharkHp < (sharkMaxHp*.1))
             rawHp.texture = hp0;
 
-        //Hunger soon
+        if (factor == 3)
+            rawHung.texture=hun3;
+        if (factor == 2)
+            rawHung.texture = hun2;
+        if (factor == 1)
+            rawHung.texture = hun1;
+        if (factor == 0)
+            rawHung.texture = hun0;
     }
     private void AnimatorStateMachine()
     {
@@ -255,6 +329,23 @@ public class SharkController : MonoBehaviour
         sharkAnim.SetBool("isFeed", false);
         Debug.Log("Fed");
         aud.Play();
+        energy += .25;
+        try
+        {
+            npc.Fed();
+        }
+        catch (Exception e)
+        {
+            print("No NPC");
+        }
+        try
+        {
+            bnpc.Fed();
+        }
+        catch (Exception e)
+        {
+            print("No Big NPC");
+        }
         startTime = 0f;
         timer = 0f;
         held = false;

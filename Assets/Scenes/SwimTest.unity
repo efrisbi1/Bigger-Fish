@@ -281,9 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a4a0b5459871740b53178f30bb59a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npc: {fileID: 0}
+  bnpc: {fileID: 0}
   sharkHp: 0
   sharkMaxHp: 0
   sharkDamage: 0
+  energy: 3
+  factor: 0
   swimmingSpeedMult: 0.15
   forwardShiftMaxSpeed: 2
   animatorVelocityWithShift: 2.2
@@ -304,6 +308,8 @@ MonoBehaviour:
   hun1: {fileID: 2800000, guid: ef5b09d810002ee45ace04ce8fd3a5e5, type: 3}
   hun2: {fileID: 2800000, guid: 5a73e5c6c34fe4b4ba4bca58cf915949, type: 3}
   hun3: {fileID: 2800000, guid: 10154779f6fa2c1448b8ca53973be001, type: 3}
+  hitmark: {fileID: 463209088}
+  feedText: {fileID: 814895250}
 --- !u!4 &119442802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4460900517513676, guid: d4fa463b162a45d4cbb4c20bd7010615,
@@ -619,6 +625,7 @@ MonoBehaviour:
   npcDamage: 0
   hitmark: {fileID: 463209088}
   feedText: {fileID: 814895250}
+  feedCount: 2
 --- !u!136 &459454140
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1019,15 +1026,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 701878698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4219818d4309f924cba8c99852c45c4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b96d1c844b3b4448b3e679fc93226cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shark: {fileID: 119442801}
   sharkTrans: {fileID: 0}
-  npcHealth: 30
-  npcDamage: 0
   hitmark: {fileID: 463209088}
   feedText: {fileID: 814895250}
+  feedCount: 10
+--- !u!65 &701878700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701878698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25, y: 55, z: 15}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!54 &701878702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1677,6 +1696,7 @@ MonoBehaviour:
   npcDamage: 0
   hitmark: {fileID: 463209088}
   feedText: {fileID: 814895250}
+  feedCount: 5
 --- !u!135 &1172954282
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1986,15 +2006,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506589202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4219818d4309f924cba8c99852c45c4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b96d1c844b3b4448b3e679fc93226cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shark: {fileID: 119442801}
-  sharkTrans: {fileID: 119442802}
-  npcHealth: 100
-  npcDamage: 0
+  sharkTrans: {fileID: 0}
   hitmark: {fileID: 463209088}
   feedText: {fileID: 814895250}
+  feedCount: 20
 --- !u!195 &1506589204
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2061,6 +2080,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1506589210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506589202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 80}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1554632200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,15 +2532,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4460900517513676, guid: d4fa463b162a45d4cbb4c20bd7010615, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4460900517513676, guid: d4fa463b162a45d4cbb4c20bd7010615, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4460900517513676, guid: d4fa463b162a45d4cbb4c20bd7010615, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4460900517513676, guid: d4fa463b162a45d4cbb4c20bd7010615, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

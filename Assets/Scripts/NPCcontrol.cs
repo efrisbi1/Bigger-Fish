@@ -15,6 +15,7 @@ public class NPCcontrol : MonoBehaviour
     [SerializeField] double npcHealth;
     [SerializeField] double npcDamage;
     [SerializeField] GameObject hitmark, feedText;
+    [SerializeField] int feedCount;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,6 @@ public class NPCcontrol : MonoBehaviour
         if (npcHp.getHp()==0.0)
         {
             Destroy(GetComponent<CapsuleCollider>());
-            //Destroy(this);
             Destroy(npcNav);
             this.GetComponent<SphereCollider>().enabled = true;
             anim.SetBool("isSwim", false);
@@ -70,6 +70,7 @@ public class NPCcontrol : MonoBehaviour
         if (npcHp.getHp() == 0.0 && sharkCol.gameObject.tag== "Shark")
         {
             feedText.SetActive(true);
+            shark.npc = this;
             shark.Feed();
         }
     }
@@ -78,6 +79,19 @@ public class NPCcontrol : MonoBehaviour
         if (npcHp.getHp() == 0.0 && sharkCol.gameObject.tag == "Shark")
         {
             feedText.SetActive(false);
+            shark.npc = null;
+        }
+    }
+    public void Fed()
+    {
+        Debug.Log("NPC Food Left: " + feedCount);
+        if (feedCount > 0)
+        {
+            feedCount -= 1;
+        }
+        else if(feedCount<=0)
+        {
+            Destroy(gameObject);
         }
     }
 
