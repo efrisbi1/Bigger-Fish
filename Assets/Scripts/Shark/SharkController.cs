@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class SharkController : MonoBehaviour
@@ -15,6 +16,7 @@ public class SharkController : MonoBehaviour
     float maxScale;
     double growHp;
     double growDam;
+    Scene scene;
 
     [Space(5)]
     [Header("Shark Stats")]
@@ -48,7 +50,7 @@ public class SharkController : MonoBehaviour
     [Range(1, 10)] [SerializeField] private float rotateShiftMultMouse = 4f;
 
     [SerializeField]public Texture hp0, hp1, hp2, hp3, hun0, hun1, hun2, hun3;
-    [SerializeField] public GameObject hitmark, feedText;
+    [SerializeField] public GameObject hitmark, feedText,death;
 
     int attackAnimation = 2;
     
@@ -83,6 +85,8 @@ public class SharkController : MonoBehaviour
 
     void Start ()
     {
+        Cursor.visible = false;
+        scene = SceneManager.GetActiveScene();
         aud = GetComponent<AudioSource>();
         shark = GameObject.Find("WhiteShark");
         maxScale = 3.0f;
@@ -103,6 +107,7 @@ public class SharkController : MonoBehaviour
         rawHp = (RawImage)healthUI.GetComponent<RawImage>();
         rawHp.texture = hp3;
         rawHung = (RawImage)hungerUI.GetComponent<RawImage>();
+        death.SetActive(false);
 
         sharkRb.useGravity = false;
         sharkRb.drag = 1f;
@@ -122,14 +127,28 @@ public class SharkController : MonoBehaviour
         UpdateUI();
 
         //test shark damage and heal
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             sharkStat.damage(1.0);
         }
-        if (Input.GetKeyUp(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             sharkStat.heal(1.0);
         }
+
+        if(sharkStat.getHp()==0.0)
+        {
+            Death();
+        }
+    }
+
+    void Death()
+    {
+        death.SetActive(true);
+        energy = 0.0;
+
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(scene.name);
     }
     private void Hunger()
     {

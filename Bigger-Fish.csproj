@@ -619,6 +619,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BigNPC.cs" />
     <Compile Include="Assets\Scripts\DamageSystem.cs" />
+    <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuNPC.cs" />
     <Compile Include="Assets\Scripts\NPCcontrol.cs" />
     <Compile Include="Assets\Scripts\Shark\Growth.cs" />
     <Compile Include="Assets\Scripts\Shark\SharkController.cs" />
