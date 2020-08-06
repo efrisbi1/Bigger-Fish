@@ -8,6 +8,7 @@ TagManager:
   - TurtleHit
   - SharkMouth
   - Shark
+  - Spin
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class SharkController : MonoBehaviour
 {
     public NPCcontrol npc;
     public BigNPC bnpc;
+    public patrolNPC pnpc;
     GameObject mouth, shark,cross,healthUI,hungerUI;
     private RawImage rawHp, rawHung;
     private Vector3 scaleChange;
@@ -136,7 +137,7 @@ public class SharkController : MonoBehaviour
             sharkStat.heal(1.0);
         }
 
-        if(sharkStat.getHp()==0.0)
+        if(sharkStat.getHp()==0.0 ||sharkStat.getHp()<0.05)
         {
             Death();
         }
@@ -355,7 +356,6 @@ public class SharkController : MonoBehaviour
         }
         catch (Exception e)
         {
-            print("No NPC");
         }
         try
         {
@@ -363,11 +363,26 @@ public class SharkController : MonoBehaviour
         }
         catch (Exception e)
         {
-            print("No Big NPC");
         }
+        try
+        {
+            pnpc.Fed();
+        }
+        catch (Exception e)
+        {
+        }
+
         startTime = 0f;
         timer = 0f;
         held = false;
+    }
+    private void OnTriggerEnter(Collider spin)
+    {
+        if (spin.gameObject.tag == "Spin")
+        {
+            sharkStat.damage(pnpc.npcHp.getDam());
+            Debug.Log("Shark HP: " + sharkStat.getHp());
+        }
     }
     private void Attacking()
     {
