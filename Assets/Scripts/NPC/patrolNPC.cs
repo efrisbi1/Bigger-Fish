@@ -8,7 +8,7 @@ public class patrolNPC : MonoBehaviour
     public SharkController shark;
     private Animator anim;
     private NavMeshAgent npcNav;
-    public Transform sharkTrans,npcTrans;
+    public Transform sharkTrans, npcTrans;
 
     [Header("NPC Stats")]
     public DamageSystem npcHp;
@@ -26,7 +26,6 @@ public class patrolNPC : MonoBehaviour
         npcNav.SetDestination(GetRandomLocation());
         this.GetComponent<BoxCollider>().enabled = false;
         npcTrans = this.transform;
-
         hitmark.SetActive(false);
         feedText.SetActive(false);
         spin.SetActive(false);
