@@ -1,93 +1,256 @@
 fileFormatVersion: 2
 guid: 6af215ede01ed2145bf41b470826c8cb
-timeCreated: 1527571928
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: MegalodonShark
-    100004: MegalodonSharkRig
-    100006: ORG-eye.L
-    100008: ORG-eye.R
-    100010: ORG-fin01.L
-    100012: ORG-fin01.R
-    100014: ORG-fin02.L
-    100016: ORG-fin02.R
-    100018: ORG-finBk
-    100020: ORG-finBkUp
-    100022: ORG-finMdBk.L
-    100024: ORG-finMdBk.R
-    100026: ORG-mouth
-    100028: ORG-neck
-    100030: ORG-spine02
-    100032: ORG-spine03
-    100034: ORG-spine04
-    100036: ORG-spine05
-    100038: ORG-tailDn01
-    100040: ORG-tailDn02
-    100042: ORG-tailMd01
-    100044: ORG-tailMd02
-    100046: ORG-tailUp01
-    100048: ORG-tailUp02
-    100050: ORG-tailUp03
-    100052: ORG-torso
-    100054: ORG_head
-    400000: //RootNode
-    400002: MegalodonShark
-    400004: MegalodonSharkRig
-    400006: ORG-eye.L
-    400008: ORG-eye.R
-    400010: ORG-fin01.L
-    400012: ORG-fin01.R
-    400014: ORG-fin02.L
-    400016: ORG-fin02.R
-    400018: ORG-finBk
-    400020: ORG-finBkUp
-    400022: ORG-finMdBk.L
-    400024: ORG-finMdBk.R
-    400026: ORG-mouth
-    400028: ORG-neck
-    400030: ORG-spine02
-    400032: ORG-spine03
-    400034: ORG-spine04
-    400036: ORG-spine05
-    400038: ORG-tailDn01
-    400040: ORG-tailDn02
-    400042: ORG-tailMd01
-    400044: ORG-tailMd02
-    400046: ORG-tailUp01
-    400048: ORG-tailUp02
-    400050: ORG-tailUp03
-    400052: ORG-torso
-    400054: ORG_head
-    4300000: MegalodonShark
-    7400000: MegalodonSharkRig|attacking
-    7400002: MegalodonSharkRig|attacking_noAnticipation
-    7400004: MegalodonSharkRig|attacking_shake
-    7400006: MegalodonSharkRig|attacking_shake_loop
-    7400008: MegalodonSharkRig|attackingFromLeft
-    7400010: MegalodonSharkRig|attackingFromRight
-    7400012: MegalodonSharkRig|hurtLeft
-    7400014: MegalodonSharkRig|hurtRight
-    7400016: MegalodonSharkRig|idle
-    7400018: MegalodonSharkRig|idle_look_D
-    7400020: MegalodonSharkRig|idle_look_L
-    7400022: MegalodonSharkRig|idle_look_R
-    7400024: MegalodonSharkRig|idle_look_U
-    7400026: MegalodonSharkRig|swimming
-    7400028: MegalodonSharkRig|swimming_D
-    7400030: MegalodonSharkRig|swimming_L
-    7400032: MegalodonSharkRig|swimming_R
-    7400034: MegalodonSharkRig|swimming_U
-    7400036: MegalodonSharkRig|swimmingRoll_L
-    7400038: MegalodonSharkRig|swimmingRoll_R
-    9500000: //RootNode
-    13700000: MegalodonShark
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: MegalodonShark
+  - first:
+      1: 100004
+    second: MegalodonSharkRig
+  - first:
+      1: 100006
+    second: ORG-eye.L
+  - first:
+      1: 100008
+    second: ORG-eye.R
+  - first:
+      1: 100010
+    second: ORG-fin01.L
+  - first:
+      1: 100012
+    second: ORG-fin01.R
+  - first:
+      1: 100014
+    second: ORG-fin02.L
+  - first:
+      1: 100016
+    second: ORG-fin02.R
+  - first:
+      1: 100018
+    second: ORG-finBk
+  - first:
+      1: 100020
+    second: ORG-finBkUp
+  - first:
+      1: 100022
+    second: ORG-finMdBk.L
+  - first:
+      1: 100024
+    second: ORG-finMdBk.R
+  - first:
+      1: 100026
+    second: ORG-mouth
+  - first:
+      1: 100028
+    second: ORG-neck
+  - first:
+      1: 100030
+    second: ORG-spine02
+  - first:
+      1: 100032
+    second: ORG-spine03
+  - first:
+      1: 100034
+    second: ORG-spine04
+  - first:
+      1: 100036
+    second: ORG-spine05
+  - first:
+      1: 100038
+    second: ORG-tailDn01
+  - first:
+      1: 100040
+    second: ORG-tailDn02
+  - first:
+      1: 100042
+    second: ORG-tailMd01
+  - first:
+      1: 100044
+    second: ORG-tailMd02
+  - first:
+      1: 100046
+    second: ORG-tailUp01
+  - first:
+      1: 100048
+    second: ORG-tailUp02
+  - first:
+      1: 100050
+    second: ORG-tailUp03
+  - first:
+      1: 100052
+    second: ORG-torso
+  - first:
+      1: 100054
+    second: ORG_head
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: MegalodonShark
+  - first:
+      4: 400004
+    second: MegalodonSharkRig
+  - first:
+      4: 400006
+    second: ORG-eye.L
+  - first:
+      4: 400008
+    second: ORG-eye.R
+  - first:
+      4: 400010
+    second: ORG-fin01.L
+  - first:
+      4: 400012
+    second: ORG-fin01.R
+  - first:
+      4: 400014
+    second: ORG-fin02.L
+  - first:
+      4: 400016
+    second: ORG-fin02.R
+  - first:
+      4: 400018
+    second: ORG-finBk
+  - first:
+      4: 400020
+    second: ORG-finBkUp
+  - first:
+      4: 400022
+    second: ORG-finMdBk.L
+  - first:
+      4: 400024
+    second: ORG-finMdBk.R
+  - first:
+      4: 400026
+    second: ORG-mouth
+  - first:
+      4: 400028
+    second: ORG-neck
+  - first:
+      4: 400030
+    second: ORG-spine02
+  - first:
+      4: 400032
+    second: ORG-spine03
+  - first:
+      4: 400034
+    second: ORG-spine04
+  - first:
+      4: 400036
+    second: ORG-spine05
+  - first:
+      4: 400038
+    second: ORG-tailDn01
+  - first:
+      4: 400040
+    second: ORG-tailDn02
+  - first:
+      4: 400042
+    second: ORG-tailMd01
+  - first:
+      4: 400044
+    second: ORG-tailMd02
+  - first:
+      4: 400046
+    second: ORG-tailUp01
+  - first:
+      4: 400048
+    second: ORG-tailUp02
+  - first:
+      4: 400050
+    second: ORG-tailUp03
+  - first:
+      4: 400052
+    second: ORG-torso
+  - first:
+      4: 400054
+    second: ORG_head
+  - first:
+      43: 4300000
+    second: MegalodonShark
+  - first:
+      74: 7400000
+    second: MegalodonSharkRig|attacking
+  - first:
+      74: 7400002
+    second: MegalodonSharkRig|attacking_noAnticipation
+  - first:
+      74: 7400004
+    second: MegalodonSharkRig|attacking_shake
+  - first:
+      74: 7400006
+    second: MegalodonSharkRig|attacking_shake_loop
+  - first:
+      74: 7400008
+    second: MegalodonSharkRig|attackingFromLeft
+  - first:
+      74: 7400010
+    second: MegalodonSharkRig|attackingFromRight
+  - first:
+      74: 7400012
+    second: MegalodonSharkRig|hurtLeft
+  - first:
+      74: 7400014
+    second: MegalodonSharkRig|hurtRight
+  - first:
+      74: 7400016
+    second: MegalodonSharkRig|idle
+  - first:
+      74: 7400018
+    second: MegalodonSharkRig|idle_look_D
+  - first:
+      74: 7400020
+    second: MegalodonSharkRig|idle_look_L
+  - first:
+      74: 7400022
+    second: MegalodonSharkRig|idle_look_R
+  - first:
+      74: 7400024
+    second: MegalodonSharkRig|idle_look_U
+  - first:
+      74: 7400026
+    second: MegalodonSharkRig|swimming
+  - first:
+      74: 7400028
+    second: MegalodonSharkRig|swimming_D
+  - first:
+      74: 7400030
+    second: MegalodonSharkRig|swimming_L
+  - first:
+      74: 7400032
+    second: MegalodonSharkRig|swimming_R
+  - first:
+      74: 7400034
+    second: MegalodonSharkRig|swimming_U
+  - first:
+      74: 7400036
+    second: MegalodonSharkRig|swimmingRoll_L
+  - first:
+      74: 7400038
+    second: MegalodonSharkRig|swimmingRoll_R
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: MegalodonShark
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MegalodonShark
+    second: {fileID: 2100000, guid: 6b2decf64a7be584e86a9770319d0d99, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -100,16 +263,20 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: MegalodonSharkRig|attacking
       takeName: MegalodonSharkRig|attacking
+      internalID: 0
       firstFrame: 0
       lastFrame: 12
       wrapMode: 0
@@ -118,7 +285,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -202,6 +369,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|attacking_noAnticipation
       takeName: MegalodonSharkRig|attacking_noAnticipation
+      internalID: 0
       firstFrame: 0
       lastFrame: 12
       wrapMode: 0
@@ -294,6 +462,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|attacking_shake
       takeName: MegalodonSharkRig|attacking_shake
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -386,6 +555,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|attacking_shake_loop
       takeName: MegalodonSharkRig|attacking_shake_loop
+      internalID: 0
       firstFrame: 0
       lastFrame: 12
       wrapMode: 0
@@ -478,6 +648,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|attackingFromLeft
       takeName: MegalodonSharkRig|attackingFromLeft
+      internalID: 0
       firstFrame: 0
       lastFrame: 12
       wrapMode: 0
@@ -570,6 +741,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|attackingFromRight
       takeName: MegalodonSharkRig|attackingFromRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 12
       wrapMode: 0
@@ -662,6 +834,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|hurtLeft
       takeName: MegalodonSharkRig|hurtLeft
+      internalID: 0
       firstFrame: 0
       lastFrame: 45
       wrapMode: 0
@@ -746,6 +919,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|hurtRight
       takeName: MegalodonSharkRig|hurtRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 45
       wrapMode: 0
@@ -830,6 +1004,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|idle
       takeName: MegalodonSharkRig|idle
+      internalID: 0
       firstFrame: 0
       lastFrame: 56
       wrapMode: 0
@@ -922,6 +1097,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|idle_look_D
       takeName: MegalodonSharkRig|idle_look_D
+      internalID: 0
       firstFrame: 0
       lastFrame: 168
       wrapMode: 0
@@ -1006,6 +1182,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|idle_look_L
       takeName: MegalodonSharkRig|idle_look_L
+      internalID: 0
       firstFrame: 0
       lastFrame: 112
       wrapMode: 0
@@ -1090,6 +1267,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|idle_look_R
       takeName: MegalodonSharkRig|idle_look_R
+      internalID: 0
       firstFrame: 0
       lastFrame: 112
       wrapMode: 0
@@ -1174,6 +1352,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|idle_look_U
       takeName: MegalodonSharkRig|idle_look_U
+      internalID: 0
       firstFrame: 0
       lastFrame: 168
       wrapMode: 0
@@ -1258,6 +1437,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimming
       takeName: MegalodonSharkRig|swimming
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1342,6 +1522,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimming_D
       takeName: MegalodonSharkRig|swimming_D
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1426,6 +1607,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimming_L
       takeName: MegalodonSharkRig|swimming_L
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1510,6 +1692,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimming_R
       takeName: MegalodonSharkRig|swimming_R
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1594,6 +1777,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimming_U
       takeName: MegalodonSharkRig|swimming_U
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1678,6 +1862,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimmingRoll_L
       takeName: MegalodonSharkRig|swimmingRoll_L
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1762,6 +1947,7 @@ ModelImporter:
     - serializedVersion: 16
       name: MegalodonSharkRig|swimmingRoll_R
       takeName: MegalodonSharkRig|swimmingRoll_R
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -1849,13 +2035,23 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -1865,10 +2061,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -1878,14 +2078,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

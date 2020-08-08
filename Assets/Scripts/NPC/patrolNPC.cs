@@ -159,6 +159,8 @@ public class patrolNPC : MonoBehaviour
             npcNav.SetDestination(npcTrans.position);
             Attack();
         }
+        else
+            anim.SetBool("isAttack", false);
     }
 
     bool isCom = true;

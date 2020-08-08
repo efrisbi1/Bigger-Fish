@@ -11,12 +11,13 @@ public class SharkController : MonoBehaviour
     public NPCcontrol npc;
     public BigNPC bnpc;
     public patrolNPC pnpc;
+    public BossNPC Bnpc;
     GameObject mouth, shark,cross,healthUI,hungerUI;
     private RawImage rawHp, rawHung;
     private Vector3 scaleChange;
-    float maxScale;
-    double growHp;
-    double growDam;
+    float maxScale,scalePer;
+    double growHp,growDam,perD;
+    string percentStr;
     Scene scene;
 
     [Space(5)]
@@ -51,7 +52,7 @@ public class SharkController : MonoBehaviour
     [Range(1, 10)] [SerializeField] private float rotateShiftMultMouse = 4f;
 
     [SerializeField]public Texture hp0, hp1, hp2, hp3, hun0, hun1, hun2, hun3;
-    [SerializeField] public GameObject hitmark, feedText,death;
+    [SerializeField] public GameObject hitmark, feedText,death,percent;
 
     int attackAnimation = 2;
     
@@ -86,6 +87,7 @@ public class SharkController : MonoBehaviour
 
     void Start ()
     {
+        scalePer = 0.0f;
         Cursor.visible = false;
         scene = SceneManager.GetActiveScene();
         aud = GetComponent<AudioSource>();
@@ -118,6 +120,9 @@ public class SharkController : MonoBehaviour
 	
 	void Update ()
     {
+        scalePer = (shark.transform.localScale.x) / maxScale;
+        perD= System.Math.Round(scalePer, 4)*100;
+        percentStr = perD.ToString() + "%";
         AnimatorStateMachine();
         Attacking();
         Growth();
@@ -126,16 +131,6 @@ public class SharkController : MonoBehaviour
         sharkStat.setDam(sharkDamage);
         sharkHp = sharkStat.getHp();
         UpdateUI();
-
-        //test shark damage and heal
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            sharkStat.damage(1.0);
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            sharkStat.heal(1.0);
-        }
 
         if(sharkStat.getHp()==0.0 ||sharkStat.getHp()<0.05)
         {
@@ -229,6 +224,7 @@ public class SharkController : MonoBehaviour
     }
     private void UpdateUI()
     {
+        percent.GetComponent<UnityEngine.UI.Text>().text = percentStr;
         if(sharkHp>sharkMaxHp*.9)
             rawHp.texture = hp3;
         else if(sharkHp<(sharkMaxHp*.66)&&sharkHp>(sharkMaxHp*.33))
@@ -350,6 +346,7 @@ public class SharkController : MonoBehaviour
         Debug.Log("Fed");
         aud.Play();
         energy += .25;
+        sharkStat.heal(5.0);
         try
         {
             npc.Fed();
@@ -371,7 +368,6 @@ public class SharkController : MonoBehaviour
         catch (Exception e)
         {
         }
-
         startTime = 0f;
         timer = 0f;
         held = false;
@@ -383,7 +379,14 @@ public class SharkController : MonoBehaviour
             sharkStat.damage(pnpc.npcHp.getDam());
             Debug.Log("Shark HP: " + sharkStat.getHp());
         }
+
+        if (spin.gameObject.tag == "SharkMouth")
+        {
+            sharkStat.damage(Bnpc.npcHp.getDam());
+            Debug.Log("Shark HP: " + sharkStat.getHp());
+        }
     }
+
     private void Attacking()
     {
         shake = ShakeTimer(.1f);

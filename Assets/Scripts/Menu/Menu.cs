@@ -15,5 +15,9 @@ public class Menu : MonoBehaviour
         {
             SceneManager.LoadScene("SwimTest");
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SceneManager.LoadScene("Manual");
+        }
     }
 }

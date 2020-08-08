@@ -617,11 +617,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AttackHandler.cs" />
     <Compile Include="Assets\Scripts\DamageSystem.cs" />
+    <Compile Include="Assets\Scripts\Menu\Manual.cs" />
     <Compile Include="Assets\Scripts\Menu\Menu.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuNPC.cs" />
     <Compile Include="Assets\Scripts\NPC\AggroCheck.cs" />
     <Compile Include="Assets\Scripts\NPC\BigNPC.cs" />
+    <Compile Include="Assets\Scripts\NPC\BossNPC.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCcontrol.cs" />
     <Compile Include="Assets\Scripts\NPC\patrolNPC.cs" />
     <Compile Include="Assets\Scripts\Shark\Growth.cs" />

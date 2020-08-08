@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 117a1c6cf58e72041bbdf2b846c8bc3e
   - enabled: 1
+    path: Assets/Scenes/Manual.unity
+    guid: 7785ab66dbc9ffb43bc796f4ebf05518
+  - enabled: 1
     path: Assets/Scenes/SwimTest.unity
     guid: 202fffd78ef0da447894339457df9d89
   m_configObjects: {}
